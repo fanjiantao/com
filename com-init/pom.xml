@@ -7,7 +7,7 @@
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>com-init</artifactId>
-	<name>init - 初始化</name>
+	<name>com - 初始化</name>
 	<dependencies>
 		<!-- 自身依赖 -->
 		<dependency>
