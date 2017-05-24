@@ -17,6 +17,7 @@
 		<module>com-dict</module>
 		<module>com-srv</module>
 		<module>com-rest</module>
+		<module>com-init</module>
 	</modules>
 	
 	<properties>
@@ -57,6 +58,11 @@
 			<dependency>
 				<groupId>com.phome.com</groupId>
 				<artifactId>com-srv</artifactId>
+				<version>${com.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.phome.com</groupId>
+				<artifactId>com-init</artifactId>
 				<version>${com.version}</version>
 			</dependency>
 		</dependencies>
