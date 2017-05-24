@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.phome.com</groupId>
+		<artifactId>com-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>com-dict</artifactId>
+	<name>com - 数据模型</name>
+	<dependencies>
+		<!-- PG -->
+		<dependency>
+			<groupId>net.engining.pg</groupId>
+			<artifactId>pg-support</artifactId>
+		</dependency>
+		<!-- jpa依赖 -->
+		<dependency>
+			<groupId>com.mysema.querydsl</groupId>
+			<artifactId>querydsl-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins><!-- entity类生成插件 -->
+			<plugin>
+				<groupId>net.engining.pg</groupId>
+				<artifactId>pg-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>entity</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<designs>
+						<design>database.erm</design>
+					</designs>
+					<targetModule>com.phome.com.entity.Entity</targetModule>
+					<outputDirectory>${project.build.directory}/com-entities</outputDirectory>
+				</configuration>
+			</plugin>
+			<!-- Q对象生成插件 -->
+			<plugin>
+				<groupId>com.mysema.maven</groupId>
+				<artifactId>apt-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>process</goal>
+						</goals>
+						<phase>generate-sources</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<sourceDirectory>${project.build.directory}/com-entities</sourceDirectory>
+					<outputDirectory>${project.build.directory}/querydsl-sources</outputDirectory>
+					<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<!-- 把QueryDSL的加入source -->
+								<source>${project.build.directory}/querydsl-sources</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
