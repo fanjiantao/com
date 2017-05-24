@@ -46,6 +46,11 @@
 			</dependency>
 			<dependency>
 				<groupId>com.phome.com</groupId>
+				<artifactId>com-rest</artifactId>
+				<version>${com.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.phome.com</groupId>
 				<artifactId>com-dict</artifactId>
 				<version>${com.version}</version>
 			</dependency>
