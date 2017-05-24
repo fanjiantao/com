@@ -23,7 +23,10 @@
 		<pg.version>1.0.0-SNAPSHOT</pg.version>
 		<com.version>1.0.0-SNAPSHOT</com.version>
 	</properties>
-
+	<scm>
+		<connection>scm:git:https://github.com/fanjiantao/com.git</connection>
+		<developerConnection>scm:git:https://github.com/fanjiantao/com.git</developerConnection>
+	</scm>
 	<dependencyManagement>
 		<dependencies>
 			<!-- PG -->
