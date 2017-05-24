@@ -1,6 +1,6 @@
-package net.engining.profile.init.support;
+package com.phome.com.init.support;
 
-public interface ProfileTestDataInit {
+public interface ComTestDataInit {
 
 	void init();
 }

@@ -1,7 +1,7 @@
-package net.engining.profile.init.support;
+package com.phome.com.init.support;
 /**
  * 表初始化接口
- * @author fan
+ * @author FJT
  *
  */
 public interface TableInit {

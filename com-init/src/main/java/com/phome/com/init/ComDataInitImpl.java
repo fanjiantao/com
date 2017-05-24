@@ -1,4 +1,4 @@
-package net.engining.profile.init;
+package com.phome.com.init;
 
 import java.util.List;
 
@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import net.engining.profile.init.support.ParamInit;
-import net.engining.profile.init.support.ProfileDataInit;
-import net.engining.profile.init.support.ProfileTestDataInit;
-import net.engining.profile.init.support.TableInit;
+import com.phome.com.init.support.ComDataInit;
+import com.phome.com.init.support.ComTestDataInit;
+import com.phome.com.init.support.ParamInit;
+import com.phome.com.init.support.TableInit;
 
 @Service
-public class ProfileDataInitImpl implements ProfileDataInit{
+public class ComDataInitImpl implements ComDataInit{
 
 	@Autowired(required=false)
 	private List<TableInit> tableDataInits;
@@ -21,7 +21,7 @@ public class ProfileDataInitImpl implements ProfileDataInit{
 	private List<ParamInit> paramInits;
 	
 	@Autowired(required=false)
-	private List<ProfileTestDataInit> testDataInits;
+	private List<ComTestDataInit> testDataInits;
 	
 	@Value("#{env['initTestData']?: false}")
 	private boolean initTestData;
@@ -30,7 +30,7 @@ public class ProfileDataInitImpl implements ProfileDataInit{
 	public void init() {
 		
 		if(initTestData && testDataInits != null){
-			for(ProfileTestDataInit testDataInit : testDataInits){
+			for(ComTestDataInit testDataInit : testDataInits){
 				testDataInit.init();
 			}
 		}
