@@ -1,4 +1,4 @@
-package com.phome.com.init.support;
+package com.wzgc.com.init.support;
 
 public interface ComDataInit {
 

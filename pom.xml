@@ -6,7 +6,7 @@
 		<artifactId>project-parent</artifactId>
 		<version>1.0.RELEASE</version>
 	</parent>
-	<groupId>com.phome.com</groupId>
+	<groupId>com.wzgc.com</groupId>
 	<artifactId>com-parent</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -41,27 +41,27 @@
 
 			<!-- 自身依赖 -->
 			<dependency>
-				<groupId>com.phome.com</groupId>
+				<groupId>com.wzgc.com</groupId>
 				<artifactId>com-api</artifactId>
 				<version>${com.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.phome.com</groupId>
+				<groupId>com.wzgc.com</groupId>
 				<artifactId>com-rest</artifactId>
 				<version>${com.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.phome.com</groupId>
+				<groupId>com.wzgc.com</groupId>
 				<artifactId>com-dict</artifactId>
 				<version>${com.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.phome.com</groupId>
+				<groupId>com.wzgc.com</groupId>
 				<artifactId>com-srv</artifactId>
 				<version>${com.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.phome.com</groupId>
+				<groupId>com.wzgc.com</groupId>
 				<artifactId>com-init</artifactId>
 				<version>${com.version}</version>
 			</dependency>

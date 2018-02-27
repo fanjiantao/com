@@ -1,4 +1,4 @@
-package com.phome.com.init;
+package com.wzgc.com.init;
 
 import java.util.List;
 
@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.phome.com.init.support.ComDataInit;
-import com.phome.com.init.support.ComTestDataInit;
-import com.phome.com.init.support.ParamInit;
-import com.phome.com.init.support.TableInit;
+import com.wzgc.com.init.support.ComDataInit;
+import com.wzgc.com.init.support.ComTestDataInit;
+import com.wzgc.com.init.support.ParamInit;
+import com.wzgc.com.init.support.TableInit;
 
 @Service
 public class ComDataInitImpl implements ComDataInit{

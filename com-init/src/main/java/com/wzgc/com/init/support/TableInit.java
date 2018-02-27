@@ -1,4 +1,4 @@
-package com.phome.com.init.support;
+package com.wzgc.com.init.support;
 /**
  * 表初始化接口
  * @author FJT
